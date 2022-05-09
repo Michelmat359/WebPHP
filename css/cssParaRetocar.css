@@ -39,12 +39,14 @@ hr{
 #img-header{
     display:block; 
     margin:auto; 
-    width:100%
+    width:100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 .cabecera{
     position: relative;
     width: 100%;
-    padding-right: 15px;
+    /*padding-right: 15px;*/
 }
 
 /*NAVEGACIÓN*/

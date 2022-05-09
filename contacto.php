@@ -6,21 +6,22 @@
             <h3>Contacta con nosotros</h3>
             <h4>Contacta con nosotros e intentaremos responderte en menos de 24 horas</h4>
             <fieldset>
-                <input placeholder="Nombre" type="text" name="name" tabindex="1" required autofocus>
+                <input placeholder="Nombre" type="text" name="nombre" tabindex="1" required autofocus>
             </fieldset>
             <fieldset>
                 <input placeholder="Email" type="email" name="email" tabindex="2" required>
             </fieldset>
             <fieldset>
-                <input placeholder="Asunto" type="text" name="subject" tabindex="3" required>
+                <input placeholder="Asunto" type="text" name="asunto" tabindex="3" required>
             </fieldset>
 
             <fieldset>
-                <textarea placeholder="Escribe tu mensaje aquí...." name="message" tabindex="5" required></textarea>
+                <textarea placeholder="Escribe tu mensaje aquí...." name="mensaje" tabindex="5" required></textarea>
             </fieldset>
             <fieldset>
                 <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Enviar</button>
             </fieldset>
+
         </form>
     </div>
 </main>

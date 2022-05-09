@@ -3,8 +3,8 @@
     $username='root';
     $password='';
     $dbname = "login_usuarios";
-    $conn=mysqli_connect($servername,$username,$password,"$dbname");
-        if(!$conn){
+    $conexion = mysqli_connect($servername,$username,$password,"$dbname");
+        if(!$conexion){
             die('Could not Connect MySql Server:' .mysql_error());
         }
 ?>

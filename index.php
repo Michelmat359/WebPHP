@@ -70,13 +70,14 @@ ob_start(); ?>
     </main>
 
     <!--PIE DE PÁGINA-->
-    <footer>
-        <p class="pie"> Laura Moya Ruiz. &copy; 2022 All rigth reserved </p>
-    </footer>
+<footer>
+    <?php
+    echo "<p>Laura Moya Ruiz &copy; 1999-" . date("Y") . " All rigth reserved</p>";
+    ?>
 
-	<!-- jQuery (es necesario para plugins JavaScript de Bootstrap  ) -->
-	<script src="js/jquery-1.11.2.min.js"></script>
-	<script src="js/bootstrap.js"></script>
-
+</footer>
+<!-- jQuery (es necesario para plugins JavaScript de Bootstrap  ) -->
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.js"></script>
 
 </body>
