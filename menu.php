@@ -14,6 +14,7 @@ session_start();
     <link rel="stylesheet" href="css/cssParaRetocar.css"/>
     <link rel="stylesheet" href="css/style.css"/>
 
+
     <!-- BOOTSTRAP  -->
 
 
@@ -21,7 +22,7 @@ session_start();
 
 <body id="global">
 <!--CABECERA-->
-
+<div class="container">
 <header class="cabecera">
     <img src="img/img_nature2.jpg" id="img-header">
 </header>
@@ -32,7 +33,7 @@ session_start();
         <?php if (!isset($_SESSION['adm'])) {
             echo "<li id='menu_option'><a href='registrar.php'>Login</a></li>";
         } else {
-            echo "<li id='menu_option'><a href='perfil.php'>Perfil</a></li>";
+            echo "<li id='menu_option'><a href='inventario.php'>Perfil</a></li>";
         }
         ?>
         <li id="menu_option"><a href="Contacto.php">Contacto</a></li>

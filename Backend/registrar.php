@@ -29,7 +29,7 @@ $resultuser = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario ='$u
 if(!empty($resultemail) && !empty($resultuser)) {
     mysqli_query($conexion, "insert into usuarios(usuario, clave, nombre, apellido, email, fecha_alta, adm)  
                 values ('$usuario','$clave','$nombre',' $apellido','$email','$fecha_alta','$adm')");
-    header("Location: ../perfil.php");
+    header("Location: ../inventario.php");
 }else if (empty($resultemail) && !empty($resultuser)){
     $_SESSION["messageReg"] = "<p class='text-danger text-center'> Correo ya registrado </p>";
     header("Location: ../registrar.php");

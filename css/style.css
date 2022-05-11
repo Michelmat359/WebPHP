@@ -7,6 +7,7 @@
     position:relative;
 }
 
+
 #contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea, #contact button[type="submit"] { font:400 12px/16px "Open Sans", Helvetica, Arial, sans-serif; }
 
 #contact {
@@ -81,3 +82,67 @@ fieldset {
     outline:0;
     border:1px solid #999;
 }
+
+.form-signin {
+    max-width: 280px;
+    margin: 60px auto 10px;
+
+.form-signin-heading {
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0px 1px 2px #111;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.checkbox {
+    font-weight: normal;
+}
+
+.form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    @include box-sizing(border-box);
+}
+
+input[type="text"] {
+    margin-bottom: -1px;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+    border-radius: 6px 6px 0px 0px;
+
+&:focus {
+     box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+ }
+}
+
+input[type="password"] {
+    z-index: 2;
+    margin-bottom: 20px;
+    border-top: none;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+    border-radius: 0px 0px 6px 6px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0px 1px 0px 0px rgba(255,255,255,0.5);
+
+&:focus {
+     box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0px 1px 0px 0px rgba(255,255,255,0.5);
+ }
+}
+
+.btn {
+    font-weight: bold;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.2);
+}
+}
+
+p.sign-up {
+    text-shadow: 0px 1px 2px #222;
+    color: #fff;
+    font-size: 12px;
+}
+

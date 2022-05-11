@@ -68,7 +68,7 @@ ob_start(); ?>
             </section>
         </aside>
     </main>
-
+</div>
     <!--PIE DE PÁGINA-->
 <footer>
     <?php

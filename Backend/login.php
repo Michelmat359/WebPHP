@@ -11,7 +11,7 @@ $registros = mysqli_query($conexion, "select * from usuarios where usuario='$_RE
 
 if (mysqli_fetch_array($registros)) {
     $_SESSION["message"] = "Existo";
-    header("Location: ../perfil.php");
+    header("Location: ../inventario.php");
 } else {
     $_POST["message"] = "<p class='text-danger text-center'> Usuario o contraseña erronea </p>";
     header("Location: ../registrar.php");
