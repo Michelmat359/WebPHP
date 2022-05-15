@@ -1,6 +1,6 @@
 <?php
 
-$id = $_GET['id'];
+$id = $_POST['id'];
 
 $servername = 'localhost';
 $username = 'root';
@@ -11,7 +11,7 @@ $conexion = mysqli_connect($servername, $username, $password, "$dbname");
 
 // sql to delete a record
 $sql = "DELETE FROM arcos WHERE id = $id";
-$delete = mysqli_query($conexion, "DELETE FROM arcos WHERE id = $id");
+$delete = mysqli_query($conexion, $sql);
 
 if ($delete) {
     mysqli_close($conexion);
