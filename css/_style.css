@@ -86,8 +86,8 @@ fieldset {
 .form-signin {
     max-width: 280px;
     margin: 60px auto 10px;
-
-.form-signin-heading {
+}
+.form-signin.form-signin-heading {
     text-align: center;
     font-weight: bold;
     text-shadow: 0px 1px 2px #111;
@@ -95,31 +95,30 @@ fieldset {
     margin-bottom: 20px;
 }
 
-.checkbox {
+.form-signin.checkbox {
     font-weight: normal;
 }
 
-.form-control {
+.form-signin.form-control {
     position: relative;
     font-size: 16px;
     height: auto;
     padding: 10px;
-    @include box-sizing(border-box);
+    /*@include box-sizing(border-box);*/
 }
 
-input[type="text"] {
+.form-signin.input[type="text"] {
     margin-bottom: -1px;
     border-top: 1px solid #000;
     border-right: 1px solid #000;
     border-left: 1px solid #000;
     border-radius: 6px 6px 0px 0px;
-
-&:focus {
+}
+.form-signin.input[type="text"]:focus {
      box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
- }
 }
 
-input[type="password"] {
+.form-signin.input[type="password"] {
     z-index: 2;
     margin-bottom: 20px;
     border-top: none;
@@ -127,18 +126,18 @@ input[type="password"] {
     border-right: 1px solid #000;
     border-left: 1px solid #000;
     border-radius: 0px 0px 6px 6px;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0px 1px 0px 0px rgba(255,255,255,0.5);
-
-&:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
+}
+.form-signin.input[type="password"]:focus {
      box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0px 1px 0px 0px rgba(255,255,255,0.5);
- }
+
 }
 
-.btn {
+.form-signin.btn {
     font-weight: bold;
     text-shadow: 0px -1px 0px rgba(0,0,0,0.2);
 }
-}
+
 
 p.sign-up {
     text-shadow: 0px 1px 2px #222;
