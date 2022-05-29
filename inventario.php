@@ -29,19 +29,19 @@
                         <input class="form-control" type="hidden" name="id">
                         <div class="form-group">
                             <label for="name">Nombre</label>
-                            <input class="form-control" type="text" name="name">
+                            <input id="edit-form" class="form-control" type="text" name="name">
                         </div>
                         <div class="form-group">
                             <label for="tipo">Tipo</label>
-                            <input class="form-control" type="text" name="tipo">
+                            <input id="edit-form" class="form-control" type="text" name="tipo">
                         </div>
                         <div class="form-group">
                             <label for="precio">Precio</label>
-                            <input class="form-control" type="text" name="precio">
+                            <input  id="edit-form" class="form-control" type="text" name="precio">
                         </div>
                         <div class="form-group">
                             <label for="cantidad">Cantidad</label>
-                            <input class="form-control" type="text" name="cantidad">
+                            <input  id="edit-form" class="form-control" type="text" name="cantidad">
                         </div>
                         <button type="button" class="btn btn-primary" id="btnUpdateSubmit">Actualizar</button>
                         <button type="button" class="btn btn-danger float-right" data-dismiss="modal">Cerrar</button>
@@ -51,7 +51,6 @@
                 </div>
 
                 <!-- Modal body -->
-
 
             </div>
 
@@ -69,11 +68,14 @@
 </footer>
 <!-- jQuery (es necesario para plugins JavaScript de Bootstrap  ) -->
 <!--<script src="js/jquery-1.11.2.min.js"></script>-->
-<script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+
+
     jQuery(".kill").click(function (e) {
+        console.log("Estoy dentro")
         let tip = $(this).val();
         Swal.fire({
             title: 'Estas seguro?',
@@ -120,7 +122,7 @@
 
                 // Parse the json result
                 response = JSON.parse(response);
-                html = '<table class="table table-bordered table-hover dataTable"><thead><tr>';
+                html = '<table id="tablearco" class="table table-striped table-bordered" style="width:100%"><thead><tr>';
                 html += '<th scope="col">Id</th><th scope="col">Name</th><th scope="col">Tipo</th><th scope="col">Precio</th><th scope="col">Cantidad</th><th scope="col">Acciones</th></tr></thead>';
                 html += '<tbody>'
                 $.each(response, function (key, value) {
@@ -130,10 +132,8 @@
                     html += "<td>" + value.tipo + "</td>"
                     html += "<td>" + value.precio + "</td>"
                     html += "<td>" + value.cantidad + "</td>"
-                    html += '<td><button type="button" value="' + value.id + '"class="btn btn-danger btn-sm kill"> <span class="glyphicon glyphicon-trash"></span></button>';
-
-                    html += '<button type="button" value="' + value.id + '"data-toggle="modal" data-target="#openedit" class="btn btn-primary btn-sm openedit"><span class="glyphicon glyphicon-pencil"></span></button>';
-
+                    html += '<td><button type="button" id="' + value.id + '"class="btn btn-danger btn-sm kill"> <span class="glyphicon glyphicon-trash"></span></button> &nbsp';
+                    html += '<button type="button" id="' + value.id + '" data-toggle="modal" data-target="#openedit" class="btn btn-primary btn-sm openedit"><span class="glyphicon glyphicon-pencil"></span></button>';
                     html += '</td></tr>'
                 });
 
@@ -182,21 +182,20 @@
                 type: "GET", //we are using GET method to get data from server side
                 url: 'Backend/get.php', // get the route value
                 data: {id:id}, //set data
-                beforeSend: function () {//We add this before send to disable the button once we submit it so that we prevent the multiple click
-
-                },
+                dataType:"JSON",
                 success: function (response) {//once the request successfully process to the server side it will return result here
-                    response = JSON.parse(response);
-                    $("#edit-form [name=\"id\"]").val(response.id);
-                    $("#edit-form [name=\"name\"]").val(response.name);
-                    $("#edit-form [name=\"tipo\"]").val(response.tipo);
-                    $("#edit-form [name=\"precio\"]").val(response.precio);
-                    $("#edit-form [name=\"cantidad\"]").val(response.cantidad);
+                    console.log(response)
+                    $("#edit-form [name='id']").val(response.id);
+                    $("#edit-form [name='name']").val(response.name);
+                    $("#edit-form [name='tipo']").val(response.tipo);
+                    $("#edit-form [name='precio']").val(response.precio);
+                    $("#edit-form [name='cantidad']").val(response.cantidad);
+
                 }
             });
         });
-    }
 
+    }
 
 
     $(document).ready(function() {
@@ -206,29 +205,29 @@
         // update();
     });
 
-    // jQuery(".edit").click(function (e) {
-    //     let tip = $(this).val();
-    //     $.ajax({
-    //         url: "Backend/edit.php",
-    //         type: "POST",
-    //         data: {
-    //             'id': tip
-    //         },
-    //         success: function (result) {
-    //             Swal.fire({
-    //                 title: 'Perfecto',
-    //                 text: "El articulo ha sido eliminado!",
-    //                 type: 'success',
-    //                 showCancelButton: true,
-    //                 confirmButtonColor: '#3085d6',
-    //                 cancelButtonColor: '#d33',
-    //                 confirmButtonText: 'Aceptar',
-    //             }).then((result) => {
-    //                 window.location.reload();
-    //             })
-    //             ;
-    //
-    //         }
-    //     });
-    // });
+    jQuery(".edit").click(function (e) {
+        let tip = $(this).val();
+        $.ajax({
+            url: "Backend/edit.php",
+            type: "POST",
+            data: {
+                'id': tip
+            },
+            success: function (result) {
+                Swal.fire({
+                    title: 'Perfecto',
+                    text: 'El articulo ha sido eliminado!',
+                    type: 'success',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Aceptar',
+                }).then((result) => {
+                    window.location.reload();
+                })
+                ;
+
+            }
+        });
+    });
 </script>
