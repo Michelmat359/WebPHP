@@ -6,7 +6,7 @@ This is the git repo for the official www.php.net website.
 
 To setup a local mirror of the website:
 
-  $ git clone https://github.com/Michelmat359/WebPHP.git
+  	$ git clone https://github.com/Michelmat359/WebPHP.git
 	$ cd WebPHP
 
 
