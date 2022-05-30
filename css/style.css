@@ -1,0 +1,280 @@
+/* PARA QUITAR */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* GENERALES */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+  max-width: 1200px;
+  margin: auto;
+}
+
+p{
+    font-family: Arial;
+    font-size: 15px;
+    color: darkgray;
+    text-align: justify;
+    margin: 5px 15px;
+}
+
+h1, h5{
+    margin: 5px 15px;
+}
+
+h2, #subt{
+    margin: 0 15px;
+}
+
+/*HEADER*/
+.header-lau {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+}
+
+/*NAVEGACIÓN*/
+.collapse.navbar-collapse {
+    float: right;
+}
+
+.navbar{
+    background-color: #1C2331;
+}
+
+#menu{
+    width: 100%;
+}
+
+a.navbar-brand{
+    width: 40px;
+}
+
+/*CONTENIDO*/
+
+.contenido {
+    width: 66%;
+    margin-top: 15px;
+    float: left;
+    /*padding: auto;*/
+}
+
+
+.competiciones {
+    width: 47%;
+    text-align: center;
+    padding: 15px 10px;
+}
+
+.fullImg {
+    width: 100%;
+    text-align: center;
+    padding: 15px 10px;
+}
+
+.lista li {
+    font-family: Arial;
+    font-size: 16px;
+    color: darkgray;
+    text-align: justify;
+    margin: 15px;
+}
+
+/*ANUNCIOS-ASIDE*/
+.anuncios {
+    width: 33%;
+    /*height: 715px;*/
+    margin: 15px auto 30px auto;
+    float: right;
+}
+
+.card {
+    background-color: white;
+    margin-bottom: 15px;
+    padding: 2px 16px;
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.imgAnuncio {
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+
+/*Tablas*/
+table{
+    margin: 15px 20px 10px 15px;
+    text-align: center;
+    background-color: #f3f0d7;
+    border: solid;
+    border-style: solid;
+    border-color: #a6740c;
+    width:95%;
+    color: #585858;
+}
+
+td{
+    padding: 10px;
+    border-style: solid;
+    border-width: thin;
+    border-color: #a6740c;
+}
+
+th{
+    padding: 5px;
+}
+
+thead{
+    border-style: solid;
+    border-width: thin;
+    border-bottom-width: 2px;
+    border-color: #b9890b ;
+    background-color: #e7ac38;
+}
+
+#par{
+    background-color: #ffefce ;
+}
+
+#impar{
+    background-color: #fff8ea;
+}
+
+#impar:hover, #par:hover{
+    background-color: #e8c49a;
+    color: black;
+}
+
+#negrita{
+    font-weight: 550;
+}
+
+/*Formulario*/
+form{
+    margin:20px auto;
+}
+
+#formulario {
+    background-color:  #fff5dc ;
+    margin: 20px 40px;
+}
+
+#formperfil {
+    margin: 20px 40px;
+}
+
+#form{
+    margin-left:15px;
+}
+
+/*Mapa*/
+.mapouter-lau{
+    position: relative;
+    text-align:center;
+    height:600px;
+    width:500px;
+    margin: auto;
+    /*0px 50px 50px 100px;*/
+}
+
+.gmap_canvas{
+    overflow:hidden;
+    background:none;
+    height:600px;
+    width:500px;
+}
+
+/*cards*/
+.card {
+   background-color: white;
+   padding: 15px;
+   margin-top: 20px;
+}
+
+#personal{
+    margin: auto;
+}
+
+.row #material{
+    margin: auto;
+}
+
+div#new{
+    /*padding-right: none;*/
+}
+
+div.col-md-4-lau{
+    padding:0px;
+    position: relative;
+    width: 100%;
+    padding-left: 15px;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+/*Modal*/
+#imagenModal{
+    margin-left:130px;
+}
+
+/*Numeración de página*/
+#num-lau {
+    margin: auto auto 0px auto;
+}
+
+/*ANUNCIOS*/
+.anuncios {
+  float: right;
+  padding-left: 20px;
+
+}
+
+/*LOGIN*/
+.imagelogo{
+    width: 126px;
+    display: block;
+    margin: 10px auto 10px;
+}
+
+.cardlogin {
+    content: "";
+    display: table;
+    clear: both;
+    background-color: white;
+    padding: 15px;
+    margin-top: 20px;
+    width: 100%;
+    float: left;
+}
+
+/* Create two equal columns that sits next to each other */
+.columnlogin {
+    float: left;
+    padding: 10px;
+}
+
+.left {
+    width: 40%;
+}
+
+.right {
+    padding-left: 40px ;
+    width: 60%;
+}
+
+
+/*PIE*/
+#pie {
+    margin: auto;
+    padding: 15px;
+}

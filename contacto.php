@@ -1,36 +1,72 @@
-    <?php include 'menu.php';?>
+<?php include 'menu.php'; ?>
 
-<main>
-    <div class="container">
-        <form id="contact" action="Backend/contacto.php" method="post">
-            <h3>Contacta con nosotros</h3>
-            <h4>Contacta con nosotros e intentaremos responderte en menos de 24 horas</h4>
-            <fieldset>
-                <input placeholder="Nombre" type="text" name="nombre" tabindex="1" required autofocus>
-            </fieldset>
-            <fieldset>
-                <input placeholder="Email" type="email" name="email" tabindex="2" required>
-            </fieldset>
-            <fieldset>
-                <input placeholder="Asunto" type="text" name="asunto" tabindex="3" required>
-            </fieldset>
+    <!--CONTENIDO DE LA PÁGINA-->
+    <article class="contenido">
+        <section class="card">
+            <h1 id=form>Formulario de contacto</h1>
+            <hr>
+            <section class="card" id="formulario">
+                <form action="" class="needs-validation" novalidate>
+                    <h4>Formulario validable</h4>
+                    <hr>
+                    <section class="form-group">
+                        <section class="row">
+                            <section class="col-md-6">
+                                <label for="ValidationNombre">Nombre </label>
+                                <input type="text" class="form-control" placeholder="nombre" id="ValidationNombre" required>
+                                <section class="valid-feedback">Looks good!</section>
+                                <section class="invalid-feedback">Please, fill out this field</section>
+                            </section>
+                            <section class="col-md-6">
+                                <label for="validationApellidos">Apellidos </label>
+                                <input type="text" class="form-control" placeholder="apellidos" id="validationApellidos" required>
+                                <section class="valid-feedback">Looks good!</section>
+                                <section class="invalid-feedback">Please, fill out this field</section>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="form-group">
+                        <section class="row">
+                            <section class="col-md-8 mb-8">
+                                <label for="validationCorreoElectrónico">Correo electrónico </label>
+                                <section class="input-group">
+                                    <section class="input-group-prepend">
+                                        <span class="input-group-text" id="arroba">@</span>
+                                    </section>
+                                    <input type="text" class="form-control rounded" placeholder="Correo electrónico" id="validateCorreoElectronico" required>
+                                    <section class="valid-feedback">Looks good!</section>
+                                    <section class="invalid-feedback">Please, fill out this field</section>
+                                </section>
+                            </section>
+                            <section class="col-md-4">
+                                <label for="validateTelefono">Telefono </label>
+                                <input type="text" class="form-control rounded" placeholder="telefono" id="validateTelefono">
+                                <section class="valid-feedback">Opcional</section>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="form-group">
+                        <section class="row">
+                            <section class="col-md-12">
+                                <label for="nombre">Tu mensaje: </label>
+                                <textarea class="form-control" id="areaTexto" rows="6" required></textarea>
+                                <section class="valid-feedback">Looks good!</section>
+                                <section class="invalid-feedback">Please, write here your message</section>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="form-group form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">Agree to terms and conditions</label>
+                        <section class="invalid-feedback">You must agree before submitting.</section>
+                    </section>
 
-            <fieldset>
-                <textarea placeholder="Escribe tu mensaje aquí...." name="mensaje" tabindex="5" required></textarea>
-            </fieldset>
-            <fieldset>
-                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Enviar</button>
-            </fieldset>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </section>
+            <br>
 
-        </form>
-    </div>
-</main>
-
-<!--PIE DE PÁGINA-->
-<footer>
-    <p class="pie"> Laura Moya Ruiz. &copy; 2022 All rigth reserved </p>
-</footer>
-    <!-- jQuery (es necesario para plugins JavaScript de Bootstrap  ) -->
-    <script src="js/jquery-1.11.2.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-</body>
+        </section>
+    </article>
+<?php include 'anuncios.php'; ?>
+<?php include 'footer.php'; ?>

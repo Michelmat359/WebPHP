@@ -1,0 +1,16 @@
+LOCALIZACIÓN DE LAS ESPECIFICACIONES DEL EJERCICIO
+	Header:
+	     	- Incluye un TOOLTIP en el LOGO.
+		- El menú se colapsa.
+		- El apartado BLOG está deshabilitado.
+		- La imagen de la cabecera es de bordes redondeados (rounded).
+		- Todas las imágenes son responsive (img-fluid).
+	Anuncios:
+		- La imagen NEW tiene un TOOLTIP.
+		- Cada FLECHA tiene un POPOVER.
+	Contenido:
+		- CARRUSEL en HOME y en COMPETICIONES/AUTONÓMICOS.
+		- TABLAS responsive en COMPETICIONES/AUTONÓMICOS y COMPETICIONES/NACIONALES.
+		- NUMERACIÓN en QUIÉNES SOMOS/NUESTRO CLUB.
+		- FORMULARIO validable en CONTACTO. Los mensajes salen al clicar el botón ENVIAR.
+		- MODALES en MATERIAL.
