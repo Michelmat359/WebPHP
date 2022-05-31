@@ -2,7 +2,7 @@
     <aside class="anuncios">
         <!--Tooltip-->
         <section class="card">
-            <a href="#" data-toggle="tooltip" title="Últimas noticias"><img src="images/0_cabecera/novedad.jpg" style="display:block; margin:auto" class="img-fluid"></a>
+            <a href="#" data-toggle="tooltip" title="Últimas noticias"><canvas id="canvas" height="270" width="270"></canvas></a>
         </section>
 
         <section class="card">
@@ -23,3 +23,43 @@
         </section>
         <!--Fin Twitter-->
     </aside>
+      <script>
+         const canvas = document.getElementById("canvas")
+                    const context = canvas.getContext("2d")
+                    context.translate(canvas.width/2,canvas.height/2)
+                    const text = canvas.getContext("2d")
+
+                    const colors = {
+                        black: "#000",
+                        blue : "#0BAAEB",
+                        gold : "#FCEE4D",
+                        red : "#EA3B4A"
+                    }
+                    function drawCircle(x,y,r,c) {
+                        context.strokeStyle = c
+                        context.beginPath()
+                        context.arc(x,y,r,0,360)
+                        context.stroke()
+                    }
+                    function fillCircle(x,y,r,c) {
+                        context.fillStyle = c
+                        context.beginPath()
+                        context.arc(x,y,r,0,360)
+                        context.fill()
+                    }
+
+                    fillCircle(0,0,130,colors.blue)
+                    fillCircle(0,0,90,colors.red)
+                    fillCircle(0,0,50,colors.gold)
+
+                    drawCircle(0,0,10,colors.black)
+
+                    context.fillStyle = colors.black
+                    context.textAlign = "center"
+
+                    for (let i = 30, j = 9; i < 131; i += 20, j--) {
+                        if (j > 4) context.fillText(j,0,-(i+8));
+                        drawCircle(0,0,i,colors.black)
+                    }
+
+                </script>

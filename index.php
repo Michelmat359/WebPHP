@@ -3,7 +3,7 @@
 
     <!--CONTENIDO DE LA PÁGINA-->
     <article class="contenido">
-        <section class="card">
+        <section class="card" onload="setup();">
             <!--Carousel-->
             <section id="slide" class="carousel slide" data-ride="carousel">
                 <ul class="carousel-indicators">
@@ -43,5 +43,7 @@
             <br>
         </section>
     </article>
+
+
     <?php include 'anuncios.php'; ?>
     <?php include 'footer.php'; ?>

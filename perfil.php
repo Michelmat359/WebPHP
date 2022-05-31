@@ -1,49 +1,41 @@
 <?php include 'menu.php'; ?>
+
     <article class="cardlogin">
         <section class="card">
         <h3>Información del usuario </h3>
-            <form class="form-horizontal" name="usuario" id="formperfil" method="POST">
+            <form class="form-horizontal" action="backend/edit_user.php" name="usuario" id="formperfil" method="POST">
+
+                <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?> " />
+
                 <section class="form-group">
                     <label for="usuario" class="col-md-2 control-label">Nombre:</label>
                     <section class="col-md-10">
-                        <input type="text" class="form-control" id="usuario" name="usuario" value="usuario">
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $_SESSION['nombre'] ?>">
                     </section>
                 </section>
 
                 <section class="form-group">
-                    <label for="nombre" class="col-md-2 control-label">Nombre:</label>
+                    <label for="nombre" class="col-md-2 control-label">Apellidos:</label>
                     <section class="col-md-10">
-                        <input type="text" class="form-control" id="nombre" name="nombre" value="nombre">
+                        <input type="text" class="form-control" id="apellido" name="apellido" value="<?php echo $_SESSION['apellido'] ?>">
                     </section>
                 </section>
 
                 <section class="form-group">
                     <label for="email" class="col-md-2 control-label">Email:</label>
                     <section class="col-md-10">
-                        <input type="email" class="form-control" id="email" name="email" value="email">
+                        <input type="email" class="form-control" id="email" name="email" value="<?php echo $_SESSION['email'] ?>">
                     </section>
                 </section>
 
                 <section class="form-group">
-                    <label for="password" class="col-md-2 control-label">Password:</label>
-                    <section class="col-md-10">
-                        <input type="password" class="form-control" id="pass1" name="pass1" placeholder="password">
-                    </section>
-                </section>
-
-                <section class="form-group">
-                    <label for="password" class="col-md-2 control-label">Password:</label>
-                    <section class="col-md-10">
-                        <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Repetir password"></textarea>
-                    </section>
-                </section>
-                <section class="form-group">
-                        <button class="btn btn-danger editarUsuario">Guardar</button>
+                        <?php if(isset($_SESSION['error'])) {echo $_SESSION['error']; session_destroy();}?>
+                    <input type="submit" value="Modificar">
                 </section>
             </form>
         </section>
+        <section class="card">
+            <?php include 'usuarios.php'; ?>
+        </section>
     </article>
-    <script>
-
-    </script>
 <?php include 'footer.php'; ?>
