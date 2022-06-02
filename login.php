@@ -1,5 +1,4 @@
 <?php include 'menu.php'; ?>
-
     <!--CONTENIDO DE LA PÁGINA-->
     <article class="cardlogin">
         <section class="columnlogin left">
@@ -10,7 +9,7 @@
                     <input type="usuario" class="form-control input-lg" name="usuario" placeholder="Usuario" required>
                 </section>
                 <section class="form-group">
-                    <input type="password" class="form-control input-lg" name="password" placeholder="Contraseña" required>
+                    <input type="password" class="form-control input-lg" name="clave" placeholder="Contraseña" required>
                 </section>
                     <input type="submit" class="btn btn-success btn-block" name="bAceptar" value="Aceptar">
             </form>
@@ -26,10 +25,13 @@
                     <input type="password" class="form-control" name="clave" placeholder="Contraseña" required>
                 </section>
                 <section class="form-group">
-                    <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
+                    <input type="text" class="form-control" name="name" placeholder="Nombre" required>
                 </section>
                 <section class="form-group">
-                    <input type="text" class="form-control" name="apellido" placeholder="Apellido" required>
+                    <input type="text" class="form-control" name="phone" placeholder="Telefono" required>
+                </section>
+                <section class="form-group">
+                    <input type="text" class="form-control" name="city" placeholder="Ciudad" required>
                 </section>
                  <section class="form-group">
                     <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Email" required>

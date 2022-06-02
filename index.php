@@ -12,12 +12,12 @@
                     <li data-target="#slide" data-slide-to="2" class="active"></li>
                 </ul>
                 <section class="carousel-inner">
-                    <div class="carousel-item active">
+                    <section class="carousel-item active">
                         <img src="images/1_A_Bweb/archer1.jpg" class="img-fluid">
-                        <div class="carousel-caption">
+                        <section class="carousel-caption">
                             <h3>Próximos eventos</h3>
-                        </div>
-                    </div>
+                        </section>
+                    </section>
                     <section class="carousel-item">
                         <img src="images/1_A_Bweb/ceu3.jpg" class="img-fluid">
                     </section>

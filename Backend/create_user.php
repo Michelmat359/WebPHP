@@ -1,43 +1,68 @@
 <?php
 session_start();
+
+include 'conection.php';
 $_SESSION["messageReg"] == "";
-$servername='localhost';
-$username='root';
-$password='';
-$dbname = "web";
-$conexion = mysqli_connect($servername,$username,$password,"$dbname");
 
-$params = array();
-$error = false;
-$usuario = trim($_POST['usuario']);
-$clave = trim($_POST['clave']);
-$nombre = trim($_POST['nombre']);
-$apellido = trim($_POST['apellido']);
-$email = trim($_POST['email']);
-$adm = trim($_POST['adm']);
+if(count($_POST)>0){
+    $user=$_POST['usuario'];
+    $clave=$_POST['clave'];
+    $name=$_POST['name'];
+    $email=$_POST['email'];
+    $phone=$_POST['phone'];
+    $city=$_POST['city'];
+    $sql_email = "SELECT * FROM usuarios WHERE email ='$email'" ;
+    $sql_user = "SELECT * FROM usuarios WHERE usuario ='$user'" ;
 
-$usuario = strip_tags($usuario);
-$clave = strip_tags($clave);
-$nombre = strip_tags($nombre);
-$apellido = strip_tags($apellido);
-$email = strip_tags($email);
-$adm = strip_tags($adm);
-$fecha_alta = date("Y-m-d");
+    $resultemail = mysqli_query($conn, $sql_user);
+    $resultuser = mysqli_query($conn, $sql_email);
+    if ( mysqli_num_rows($resultuser) > 0 ) {
+        $_SESSION["messageReg"] = "<p class='text-danger text-center'> El usuario ya existe </p>";
+        header("Location: ../login.php");
+    } else if ( mysqli_num_rows($resultemail) > 0 ) {
+        $_SESSION["messageReg"] = "<p class='text-danger text-center'> El email ya existe </p>";
+        header("Location: ../login.php");
+    } else {
 
-$resultemail = mysqli_query($conexion, "SELECT * FROM usuarios WHERE email ='$email'");
-$resultuser = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario ='$usuario'");
+        $sql2 = "INSERT INTO `login`(`usuario`, `clave`) VALUES ('$user','$clave')";
 
-if(!empty($resultemail) && !empty($resultuser)) {
-    mysqli_query($conexion, "insert into usuarios(usuario, clave, nombre, apellido, email, fecha_alta, adm)
-                values ('$usuario','$clave','$nombre',' $apellido','$email','$fecha_alta','$adm')");
-    $_SESSION['id'] = mysqli_query($conexion, "SELECT id FROM usuarios WHERE usuario ='$usuario' AND email ='$email' ");
-    $_SESSION['login'] = true;
-    header("Location: ../perfil.php");
-}else if (empty($resultemail) && !empty($resultuser)){
-    $_SESSION['error2'] = "<p class='text-danger text-center'> Correo ya registrado </p>";
-    header("Location: ../login.php");
-}else{
-    $_SESSION["error2"] = "<p class='text-danger text-center'> Usuario ya registrado </p>";
-    header("Location: ../login.php");
+        if (mysqli_query($conn, $sql2)) {
+
+            $sql_id = "SELECT id FROM login WHERE usuario ='$user'";
+            if (mysqli_query($conn, $sql_id)){
+                $result = mysqli_query($conn, $sql_id);
+                $row = mysqli_fetch_array($result);
+                $user_id = $row['id'];
+                $sql = "INSERT INTO `usuarios`(`name`, `email`, `phone`, `city`, `user_id`, `adm`) VALUES ('$name','$email','$phone','$city','$user_id','Alumno')";
+                if (mysqli_query($conn, $sql)) {
+                    $_SESSION["message"] = "Logueado";
+                    $_SESSION['login'] = true;
+                    $_SESSION['usuario'] = $user;
+                    $_SESSION['password'] = $clave;
+                    $_SESSION['id'] = $user_id;
+                    $_SESSION['name'] = $name;
+                    $_SESSION['phone'] = $phone;
+                    $_SESSION['email'] = $email;
+                    $_SESSION['city'] = $city;
+                    $_SESSION['rol'] = "Alumno";
+                    header("Location: ../perfil.php");
+                } else {
+                    $_SESSION["messageReg"] = "<p class='text-danger text-center'> Error al guardar </p>";
+                    header("Location: ../login.php");
+                }
+            } else {
+                $_SESSION["messageReg"] = "<p class='text-danger text-center'> Error al guardar </p>";
+                header("Location: ../login.php");
+            }
+
+        } else {
+            $_SESSION["messageReg"] = "<p class='text-danger text-center'> Error al registrar </p>";
+            header("Location: ../login.php");
+        }
+
+        mysqli_close($conn);
+    }
 }
+
+
 

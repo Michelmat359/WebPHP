@@ -14,6 +14,33 @@ body {
   margin: auto;
 }
 
+#user_form{
+    width: 100%;
+    margin: auto;
+}
+
+#update_form{
+    width: 100%;
+    margin: auto;
+}
+
+#delete_form{
+    width: 100%;
+    margin: auto;
+}
+
+.btn-lau-izq{
+    margin-top: 20px;
+    float: left;
+    margin-bottom: 20px;
+    }
+
+.btn-lau-der{
+    margin-top: 20px;
+    float: right;
+    margin-bottom: 20px;
+}
+
 p{
     font-family: Arial;
     font-size: 15px;
@@ -225,6 +252,38 @@ div.col-md-4-lau{
 /*Modal*/
 #imagenModal{
     margin-left:130px;
+}
+
+.modal .modal-dialog {
+    max-width: 400px;
+}
+.modal .modal-header, .modal .modal-body, .modal .modal-footer {
+    padding: 20px 30px;
+}
+.modal .modal-content {
+    border-radius: 3px;
+}
+.modal .modal-footer {
+    background: #ecf0f1;
+    border-radius: 0 0 3px 3px;
+}
+.modal .modal-title {
+    display: inline-block;
+}
+.modal .form-control {
+    border-radius: 2px;
+    box-shadow: none;
+    border-color: #dddddd;
+}
+.modal textarea.form-control {
+    resize: vertical;
+}
+.modal .btn {
+    border-radius: 2px;
+    min-width: 100px;
+}
+.modal form label {
+    font-weight: normal;
 }
 
 /*Numeración de página*/

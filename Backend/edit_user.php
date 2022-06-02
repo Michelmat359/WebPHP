@@ -1,35 +1,29 @@
-<?php
+<?php session_start();
 
-$_REQUEST;
-$id = $_REQUEST['id'];
-$nombre = $_REQUEST['nombre'];
-$apellido = $_REQUEST['apellido'];
-$email = $_REQUEST['email'];
+include 'conection.php';
 
 
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = "web";
-$conexion = mysqli_connect($servername, $username, $password, "$dbname");
+if (count($_REQUEST) > 0) {
+    $id = $_REQUEST['id'];
+    $name = $_REQUEST['name'];
+    $email = $_REQUEST['email'];
+    $phone = $_REQUEST['phone'];
+    $city = $_REQUEST['city'];
 
-
-// sql to delete a record
-$sql = "UPDATE usuarios SET nombre='$nombre', apellido='$apellido', email='$email' WHERE id='$id'";
-
-$edit = mysqli_query($conexion, $sql);
-
-if ($edit) {
-    mysqli_close($conexion);
-    $_SESSION['id'] = $id ;
-    $_SESSION['nombre'] = $nombre;
-    $_SESSION['apellido'] = $apellido;
-    $_SESSION['email'] = $email;
-    header('Location: ../perfil.php');
-    exit;
-} else {
-    $_SESSION['error'] = "<p class='text-danger text-center'> Error al guardar </p>";
-    header("Location: ../perfil.php");
+$sql = "UPDATE usuarios SET name='$name', email='$email', phone ='$phone', city = '$city' WHERE id='$id'";
+    if (mysqli_query($conn, $sql)) {
+        $_SESSION['message'] = "Usuario actualizado";
+        $_SESSION['name'] = $name;
+        $_SESSION['email'] = $email;
+        $_SESSION['phone'] = $phone;
+        $_SESSION['city'] = $city;
+        header("Location: ../perfil.php");
+    } else {
+        $_SESSION['error'] = "<p class='text-danger text-center'> Error al guardar </p>";
+        header("Location: ../perfil.php");
+    }
+    mysqli_close($conn);
 }
+
 
 ?>
