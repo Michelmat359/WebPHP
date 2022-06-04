@@ -33,7 +33,7 @@ if(count($_POST)>0){
                 $result = mysqli_query($conn, $sql_id);
                 $row = mysqli_fetch_array($result);
                 $user_id = $row['id'];
-                $sql = "INSERT INTO `usuarios`(`name`, `email`, `phone`, `city`, `user_id`, `adm`) VALUES ('$name','$email','$phone','$city','$user_id','Alumno')";
+                $sql = "INSERT INTO `usuarios`(`name`, `email`, `phone`, `city`, `user_id`, `adm`) VALUES ('$name','$email','$phone','$city','$user_id','Usuario')";
                 if (mysqli_query($conn, $sql)) {
                     $_SESSION["message"] = "Logueado";
                     $_SESSION['login'] = true;

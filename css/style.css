@@ -64,6 +64,8 @@ h2, #subt{
     padding-right: 15px;
 }
 
+
+
 /*NAVEGACIÓN*/
 .collapse.navbar-collapse {
     float: right;
@@ -129,6 +131,10 @@ a.navbar-brand{
 
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.canvas {
+    margin:auto;
 }
 
 .imgAnuncio {

@@ -1,36 +1,21 @@
 <!-- Añadir usuario -->
-$(document).on('click', '#btn-add', function (e) {
-    var data = $("#user_form").serialize();
-    console.log(data);
-    $.ajax({
-        data: data,
-        type: "post",
-        url: "backend/crud_usuarios.php",
-        success: function (dataResult) {
-            console.log(dataResult);
-            var dataResult = JSON.parse(dataResult);
-            if (dataResult.statusCode == 200) {
-                $('#addEmployeeModal').modal('hide');
-                location.reload();
+    $(document).on('click', '#btn-add', function (e) {
+        var data = $("#user_form").serialize();
+        console.log(data);
+        $.ajax({
+            data: data,
+            type: "post",
+            url: "backend/crud_usuarios.php",
+            success: function (dataResult) {
+                console.log(dataResult);
+                var dataResult = JSON.parse(dataResult);
+                if (dataResult.statusCode == 200) {
+                    $('#addEmployeeModal').modal('hide');
+                    location.reload();
+                }
             }
-        }
+        });
     });
-});
-
-$(document).on('click', '#bAceptarlog', function (e) {
-    var data = $("#login_user_form").serialize();
-    $.ajax({
-        data: data,
-        type: "post",
-        url: "backend/edit_user_login.php",
-        success: function (dataResult) {
-            var dataResult = JSON.parse(dataResult);
-            if (dataResult.statusCode == 200) {
-                location.reload();
-            }
-        }
-    });
-});
 
     $(document).on('click', '.update', function (e) {
         var id = $(this).attr("data-id");
@@ -55,7 +40,6 @@ $(document).on('click', '#bAceptarlog', function (e) {
             type: "post",
             url: "backend/crud_usuarios.php",
             success: function (dataResult) {
-                console.log(dataResult);
                 var dataResult = JSON.parse(dataResult);
                 if (dataResult.statusCode == 200) {
                     $('#editEmployeeModal').modal('hide');
@@ -80,9 +64,11 @@ $(document).on("click", "#delete", function () {
             id: $("#id_d").val()
         },
         success: function (dataResult) {
-            $('#deleteEmployeeModal').modal('hide');
-            $("#" + dataResult).remove();
-
+            var dataResult = JSON.parse(dataResult);
+            if (dataResult.statusCode == 200) {
+                $('#deleteEmployeeModal').modal('hide');
+                location.reload();
+            }
         }
     });
 });

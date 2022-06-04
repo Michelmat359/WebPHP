@@ -57,7 +57,7 @@ include 'backend/conection.php';
                                 <a class="nav-link disabled" href="#">Blog</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="contacto.php">Contacto</a>
+                                <a class="nav-link" href="calendario.php">Calendario</a>
                             </li>
                             <?php if(isset($_SESSION['login'])){
                                 echo "<li class='nav-item'><a class='nav-link' href='perfil.php'>Perfil</a></li>";

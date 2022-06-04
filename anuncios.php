@@ -2,7 +2,7 @@
     <aside class="anuncios">
         <!--Tooltip-->
         <section class="card">
-            <a href="#" data-toggle="tooltip" title="Últimas noticias"><canvas id="canvas" height="270" width="270"></canvas></a>
+            <a href="#" class="canvas" data-toggle="tooltip" title="Logo en Canvas"><canvas id="canvas" height="270" width="270"></canvas></a>
         </section>
 
         <section class="card">

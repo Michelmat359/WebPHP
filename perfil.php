@@ -4,7 +4,7 @@
         <section class="columnlogin left">
             <h2>Datos inicio sesión </h2>
             <form action="backend/edit_user_login.php" method="post">
-                <input type="hidden"  name="id" value="<?php echo $_SESSION['user_id']; ?>">
+                <input type="hidden"  name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                 <section class="form-group">
                     <label for="usuario" class="control-label">Usuario</label>
                     <section class="col-sm-10">
@@ -25,8 +25,9 @@
                 </section>
                 <section class="form-group">
                     <section class="col-sm-offset-2 col-sm-10">
-                        <?php if(isset($_SESSION['error'])) echo $_SESSION['error']; ?>
+                        <?php if(isset($_SESSION['message'])) echo $_SESSION['message']; ?>
                         <input type="submit" class="btn btn-success btn-block" name="bAceptar" value="Aceptar">
+                        <?php if(isset($_SESSION['message'])) unset($_SESSION['message']); ?>
                     </section>
                 </section>
             </form>
@@ -34,6 +35,7 @@
         <section class="columnlogin right">
             <h3>Datos de usuario </h3>
             <form class="form-horizontal" action="backend/edit_user.php" method="post">
+                <input type="hidden"  name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                 <section class="form-group">
                     <label for="name" class=" control-label">Nombre</label>
                     <section class="col-sm-10">
@@ -60,7 +62,9 @@
                 </section>
                 <section class="form-group">
                     <section class="col-sm-offset-2 col-sm-10">
+                        <?php if(isset($_SESSION['error2'])) echo $_SESSION['error2']; ?>
                         <button type="submit" class="btn btn-success">Actualizar</button>
+                        <?php if(isset($_SESSION['error2'])) unset($_SESSION['error2']); ?>
                     </section>
                 </section>
             </form>
