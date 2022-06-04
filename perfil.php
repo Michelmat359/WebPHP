@@ -1,5 +1,5 @@
 <?php include 'menu.php'; ?>
-<?php print_r($_SESSION); ?>
+
     <article class="cardlogin">
         <section class="columnlogin left">
             <h2>Datos inicio sesión </h2>
